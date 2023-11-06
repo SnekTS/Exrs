@@ -1,6 +1,6 @@
 # Multiplication table (from 1 to 10) in Python
 
-num = 389
+num = 329
 
 # To take input from the user
 # num = int(input("Display multiplication table of? "))
