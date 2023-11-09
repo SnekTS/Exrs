@@ -1,10 +1,20 @@
-# Multiplication table (from 1 to 10) in Python
+import psycopg2
 
-num = 329
+conn = psycopg2.connect(host = 'localhost', database = 'amir', user = 'postgres', password = '123', port = '5432')
 
-# To take input from the user
-# num = int(input("Display multiplication table of? "))
+cur = conn.cursor()
+cur.execute('SELECT first_name FROM actor')
+usernames = [r[0] for r in cur.fetchall()]
+username = input('Log in:')
+while not Found:
+   if username in usernames:
+      print('Alredy in list')
+      Found = True
+   else:
+      print('Don`t exist')
 
-# Iterate 10 times from i = 1 to 10
-for i in range(10):
-   print(num, 'x', i, '=', num*i)
+conn.commit()
+cur.close()
+conn.close()
+   
+   
